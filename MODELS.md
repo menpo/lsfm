@@ -6,6 +6,10 @@ This file acts as documentation for the use of the Large Scale Facial Model (LSF
 J. Booth, A. Roussos, S. Zafeiriou, A. Ponniah, D. Dunaway.
 *Proceedings of IEEE Int’l Conf. on Computer Vision and Pattern Recognition (CVPR 2016). June 2016.*](http://ibug.doc.ic.ac.uk/media/uploads/documents/0002.pdf)
 
+> **Large scale 3D Morphable Models**
+J. Booth, A. Roussos, A. Ponniah, D. Dunaway, S. Zafeiriou.
+*International Journal of Computer Vision (IJCV), under revision.*
+
 ### Acquiring LSFM
 
 LSFM is made available to researchers for non-commercial use. For full terms and conditions, and to request access to the model, please visit the [LSFM website](http://ibug.doc.ic.ac.uk/resources/lsfm/).
