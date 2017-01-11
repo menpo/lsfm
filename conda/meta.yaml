@@ -1,0 +1,35 @@
+package:
+  name: menpo
+  version: {{ environ['CONDACI_VERSION'] }}
+
+source:
+  path: ../
+
+build:
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record=record.txt
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+    - menpo3d >=0.5.0,<0.6
+    - menpofit >=0.4.1,<0.5
+    - menpodetect >=0.4.1,<0.5
+    - joblib >=0.9.4
+    - docopt >=0.6.2
+
+test:
+
+  imports:
+    - lsfm
+
+  commands:
+    - lsfm --help
+
+about:
+  home: https://github.com/menpo/lsfm/
+  license: BSD
