@@ -6,13 +6,6 @@ This file acts as documentation for the use of the Large Scale Facial Model (LSF
 J. Booth, A. Roussos, S. Zafeiriou, A. Ponniah, D. Dunaway.
 *Proceedings of IEEE Int’l Conf. on Computer Vision and Pattern Recognition (CVPR 2016). June 2016.*](http://ibug.doc.ic.ac.uk/media/uploads/documents/0002.pdf)
 
-#### Demonstration video (click to play on YouTube)
-
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=Z1QfiR-JirA
-" target="_blank"><img src="https://i.imgur.com/AFoSItg.png"
-alt="LSFM demo video" width="640" height="360" border="0" /></a>
-
-
 ### Acquiring LSFM
 
 LSFM is made available to researchers for non-commercial use. For full terms and conditions, and to request access to the model, please visit the [LSFM website](http://ibug.doc.ic.ac.uk/resources/lsfm/).
@@ -164,5 +157,3 @@ Cropped facial models (those ending in `_croped.mat`) have an additional two fie
 |------|----------|----------------|
 |`map_cropped_to_full`| Integer array of shape `(n_cropped_vertices,)` | `i`'th value encodes the matching vertex index in the full model for the `i`'th vertex of the cropped model
 |`map_full_to_cropped`| Integer array of shape `(n_full_vertices,)` | `j`'th value encodes the matching vertex index in the cropped model for the `j`'th vertex of the full model. Where no mapping exists, `-1` is set.
-
-An example of loading the model file and visualizing using the Menpo Project in Python is provided in `./python/load.py`

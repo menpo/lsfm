@@ -15,12 +15,12 @@ LSFM has complex dependencies which will be installed trivially if you use `cond
 
 Follow the conda installation instructions from the [Menpo website](http://www.menpo.org/installation/conda.html). Then run:
 ```
-> conda create -n lsfm -c menpo lsfm
+> conda create -n lsfm -c menpo python=3.5 lsfm
 ```
 which:
-- creates a new Python 3.5 environment called `lsfm` (`-n lsfm`)
+- creates a new Python 3.5 environment called `lsfm` (`create -n lsfm`, `python=3.5`)
 - which uses the `menpo` conda channel... (`-c menpo`)
-- ...to install the `lsfm` package along with all it's dependencies.
+- ...to install the `lsfm` package along with all it's dependencies. (the final `lsfm`)
 
 LSFM can be used on Windows, macOS and Linux. However, presently **only Linux comes with suitesparse** which **hugely increases the performance of the code**. Because of this, **we strongly recommend you use Linux** for building large models - performance will be 5x-10x faster than it is on Windows or macOS.
 
