@@ -1,5 +1,5 @@
 package:
-  name: menpo
+  name: lsfm
   version: {{ environ['CONDACI_VERSION'] }}
 
 source:
