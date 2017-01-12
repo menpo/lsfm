@@ -60,10 +60,11 @@ def rotation_from_3d_ccw_angle_around_z(theta, degrees=True):
                     skip_checks=True)
 
 
-def perspective_camera_for_template(img_shape, focal_length_mult=1.1):
+def perspective_camera_for_template(img_shape, focal_length_mult=1.1,
+                                    pose_angle_deg=0):
     f = np.array(img_shape).max() * focal_length_mult
     rot_z = rotation_from_3d_ccw_angle_around_z(180)
-    rot_y = rotation_from_3d_ccw_angle_around_y(180)
+    rot_y = rotation_from_3d_ccw_angle_around_y(180 + pose_angle_deg)
     rotation = rot_z.compose_before(rot_y)
 
     translation = Translation([0, 0, +3])

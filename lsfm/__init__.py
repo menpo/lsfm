@@ -1,5 +1,5 @@
 from .landmark import landmark_mesh
-from .visualize import rasterize_mesh_at_template
+from .visualize import visualize_nicp_result
 from .correspond import correspond_mesh
 from ._version import get_versions
 __version__ = get_versions()['version']
@@ -18,6 +18,7 @@ def landmark_and_correspond_mesh(mesh, verbose=False):
                                       verbose=verbose),
         'landmarked_image': lms['landmarked_image']
     }
-    return_dict['shape_nicp_visualization'] = rasterize_mesh_at_template(
+    return_dict['shape_nicp_visualization'] = visualize_nicp_result(
         return_dict['shape_nicp'])
+
     return return_dict
