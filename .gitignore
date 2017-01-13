@@ -1,4 +1,27 @@
-.idea
-*.egg-info
 lsfm/data/template.pkl
+.idea
+*.iml
+__pycache__
+.coverage
+cover/*
+*.pyd
+*.swp
+*.pyc
+*.so
+*.exe
+*.DS_Store
+build/*
+*.egg-info
+# Ignore IPython notebook autosave files
+.ipynb_checkpoints
+*.log
+# Ignore Sphinx docs
+docs/_build/*
+# Ignore nfs file mount temp files
+.nfs*
+# Ignore the dist builds
+dist/*
+# distutils makes the MANIFEST (note we make MANIFEST.in)
+MANIFEST
+# IntelliJ's module file
 *.iml
