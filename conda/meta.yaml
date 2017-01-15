@@ -18,7 +18,7 @@ requirements:
     - python
     - menpo3d >=0.5.0,<0.6
     - menpofit >=0.4.1,<0.5
-    - menpodetect >=0.4.1,<0.5
+    - menpodetect 0.4.*
     - joblib >=0.9.4
     - docopt >=0.6.2
 
