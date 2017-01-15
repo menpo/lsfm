@@ -10,7 +10,6 @@ env:
   global:
     - BINSTAR_USER: menpo
   matrix:
-    - PYTHON_VERSION: 3.4
     - PYTHON_VERSION: 3.5
 
 install:
