@@ -161,3 +161,17 @@ Cropped facial models (those ending in `_croped.mat`) have an additional two fie
 |------|----------|----------------|
 |`map_cropped_to_full`| Integer array of shape `(n_cropped_vertices,)` | `i`'th value encodes the matching vertex index in the full model for the `i`'th vertex of the cropped model
 |`map_full_to_cropped`| Integer array of shape `(n_full_vertices,)` | `j`'th value encodes the matching vertex index in the cropped model for the `j`'th vertex of the full model. Where no mapping exists, `-1` is set.
+
+
+## Loading LSFM models with Menpo
+
+As of `menpo3d ` v0.5.2 an importer for the LSFM file format is included:
+
+```python
+import menpo3d.io as m3io
+
+model = m3io.import_lsfm_model('./path/to/all_all_all.mat')
+print(model)
+```
+
+This returns a Menpo [`PCAModel`](https://menpo.readthedocs.io/en/stable/api/model/PCAModel.html), ready for use.
