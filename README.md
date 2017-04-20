@@ -8,7 +8,7 @@ J. Booth, A. Roussos, A. Ponniah, D. Dunaway, S. Zafeiriou.
 
 > [**A 3D Morphable Model learnt from 10,000 faces**
 J. Booth, A. Roussos, S. Zafeiriou, A. Ponniah, D. Dunaway.
-*Proceedings of IEEE Int’l Conf. on Computer Vision and Pattern Recognition (CVPR), June 2016.*](http://ibug.doc.ic.ac.uk/media/uploads/documents/0002.pdf)
+*Proceedings of IEEE Int’l Conf. on Computer Vision and Pattern Recognition (CVPR), June 2016*](http://ibug.doc.ic.ac.uk/media/uploads/documents/0002.pdf)
 
 It also provides [documentation about the models themselves](./MODELS.md).
 
