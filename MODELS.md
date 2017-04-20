@@ -32,12 +32,12 @@ The full list of different demographic models, the size of the training set, and
 Note that:
 - The filename always takes the form `GENDER_ETHNICITY_AGE{_cropped}.mat`
  - Our most powerful, generic model, is therefore `all_all_all.mat`
-- The number of components retained is always the minimal sufficient to retain 99.7% of the variance in the model's training set
+- The number of components retained is always the minimal sufficient to retain **99.7% of the variance** in the model's training set
 - Among all possible combinations of age, gender and ethnicity, we retain only those ones for which sufficient training data exists in our database to build a useful model
 
 
-| Filename                          | Gender | Ethnicity | Age         | Facial Region | Training Samples | No. Components (99.7% variance)
-|-----------------------------------|--------|-----------|-------------|----------|-------- |-------- |-------- |
+| Filename                          | Gender | Ethnicity | Age         |  Region |  Subjects | Components  | 
+|-----------------------------------|--------|-----------|-------------|---------|----- |---- |
 | `all_all_18-50.mat`               | All    | All       | 18 to 50    | Full    | 5106 | 183 |
 | `all_all_18-50_cropped.mat`       | All    | All       | 18 to 50    | Cropped | 5106 | 280 |
 | `all_all_7-18.mat`                | All    | All       | 7 to 18     | Full    | 2029 | 132 |
