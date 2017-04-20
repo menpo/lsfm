@@ -152,7 +152,7 @@ Each `.mat` model file contains the following:
 |`components`| Floating point matrix of shape `(n_vertices * 3, n_components)` | The unit eigenvectors that make up the statistical model. Each component ordered as the mean is.
 |`eigenvalues`| Floating point array of shape `(n_components,)` | The corresponding eigenvalue (variance) for each component
 |`cumulative_explained_variance`| Floating point array of shape `(n_components,)` | The cumulative variance explained by retaining all components up to this one. Final value will always be just above `0.997`.
-|`trilist`| Integer matrix of shape `(n_triangles, 3)` | The `0`-based triangulation of the vertices needed to form the mesh surface.
+|`trilist`| Integer matrix of shape `(n_triangles, 3)` | The `0`-based triangulation of the vertices needed to form the mesh surface. Note that to use in Matlab, you therefore must add 1 to all indices to make it `1`-based.
 |`n_training_samples`| Integer | The number of facial scans used to build the model.
 
 Cropped facial models (those ending in `_croped.mat`) have an additional two fields, describing the mapping between the full and cropped facial models:
