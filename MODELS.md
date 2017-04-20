@@ -2,13 +2,13 @@
 
 This file acts as documentation for the use of the Large Scale Facial Model (LSFM) presented in:
 
-> [**A 3D Morphable Model learnt from 10,000 faces**
-J. Booth, A. Roussos, S. Zafeiriou, A. Ponniah, D. Dunaway.
-*Proceedings of IEEE Int’l Conf. on Computer Vision and Pattern Recognition (CVPR), June 2016.*](http://ibug.doc.ic.ac.uk/media/uploads/documents/0002.pdf)
-
 > [**Large scale 3D Morphable Models**
 J. Booth, A. Roussos, A. Ponniah, D. Dunaway, S. Zafeiriou.
 *International Journal of Computer Vision (IJCV), April 2017*](https://link.springer.com/article/10.1007/s11263-017-1009-7)
+
+> [**A 3D Morphable Model learnt from 10,000 faces**
+J. Booth, A. Roussos, S. Zafeiriou, A. Ponniah, D. Dunaway.
+*Proceedings of IEEE Int’l Conf. on Computer Vision and Pattern Recognition (CVPR), June 2016.*](http://ibug.doc.ic.ac.uk/media/uploads/documents/0002.pdf)
 
 ### Acquiring LSFM
 
