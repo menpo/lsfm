@@ -155,7 +155,7 @@ Each `.mat` model file contains the following:
 |`trilist`| Integer matrix of shape `(n_triangles, 3)` | The `0`-based triangulation of the vertices needed to form the mesh surface. Note that to use in Matlab, you therefore must add 1 to all indices to make it `1`-based.
 |`n_training_samples`| Integer | The number of facial scans used to build the model.
 
-Cropped facial models (those ending in `_croped.mat`) have an additional two fields, describing the mapping between the full and cropped facial models:
+Cropped facial models (those ending in `_croped.mat`) have an additional two fields, describing the mapping between the full and cropped facial models. Both of these mappings are **`0`-based** (and so just like `trilist`, to use in matlab you will need to add 1 to all values to make them `1`-based):
 
 | Key  | Datatype | Interpretation |
 |------|----------|----------------|
