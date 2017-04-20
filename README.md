@@ -6,9 +6,9 @@ This repository contains the code used to produce the Large Scale Facial Model (
 J. Booth, A. Roussos, S. Zafeiriou, A. Ponniah, D. Dunaway.
 *Proceedings of IEEE Int’l Conf. on Computer Vision and Pattern Recognition (CVPR 2016). June 2016.*](http://ibug.doc.ic.ac.uk/media/uploads/documents/0002.pdf)
 
-> **Large scale 3D Morphable Models**
+> [**Large scale 3D Morphable Models**](https://link.springer.com/article/10.1007/s11263-017-1009-7)
 J. Booth, A. Roussos, A. Ponniah, D. Dunaway, S. Zafeiriou.
-*International Journal of Computer Vision (IJCV), under revision.*
+*International Journal of Computer Vision (2017)* - *doi:10.1007/s11263-017-1009-7*
 
 It also provides [documentation about the models themselves](./MODELS.md).
 
