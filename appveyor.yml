@@ -1,0 +1,24 @@
+build: false
+
+environment:
+  global:
+    BINSTAR_USER: menpo
+    BINSTAR_KEY:
+      secure: fyETJrtllCxpbmu5FLz5KVnRW1qLEfSmZa5GVSIzoWEPejhD/a2kWdhbhRYj1rTj
+  matrix:
+    - PYTHON_VERSION: 3.5
+
+platform:
+  - x86
+  - x64
+
+init:
+  - ps: Start-FileDownload 'https://raw.githubusercontent.com/menpo/condaci/v0.4.x/condaci.py' C:\\condaci.py; echo "Done"
+  - cmd: python C:\\condaci.py setup
+
+install:
+  - ps: $env:MINICONDA_DIR = python C:\\condaci.py miniconda_dir
+  - ps: $BUILD_CMD = "${env:MINICONDA_DIR}" + "\\python C:\\condaci.py build conda"; Invoke-Expression $BUILD_CMD
+
+after_test:
+  - ps: $wc = New-Object 'System.Net.WebClient'; $wc.UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path C:\\menpo.xml))
