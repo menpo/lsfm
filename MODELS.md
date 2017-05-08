@@ -2,13 +2,13 @@
 
 This file acts as documentation for the use of the Large Scale Facial Model (LSFM) presented in:
 
+> [**Large scale 3D Morphable Models**
+J. Booth, A. Roussos, A. Ponniah, D. Dunaway, S. Zafeiriou.
+*International Journal of Computer Vision (IJCV), April 2017*](https://link.springer.com/article/10.1007/s11263-017-1009-7)
+
 > [**A 3D Morphable Model learnt from 10,000 faces**
 J. Booth, A. Roussos, S. Zafeiriou, A. Ponniah, D. Dunaway.
-*Proceedings of IEEE Int’l Conf. on Computer Vision and Pattern Recognition (CVPR 2016). June 2016.*](http://ibug.doc.ic.ac.uk/media/uploads/documents/0002.pdf)
-
-> **Large scale 3D Morphable Models**
-J. Booth, A. Roussos, A. Ponniah, D. Dunaway, S. Zafeiriou.
-*International Journal of Computer Vision (IJCV), under revision.*
+*Proceedings of IEEE Int’l Conf. on Computer Vision and Pattern Recognition (CVPR), June 2016*](http://ibug.doc.ic.ac.uk/media/uploads/documents/0002.pdf)
 
 ### Acquiring LSFM
 
@@ -32,12 +32,12 @@ The full list of different demographic models, the size of the training set, and
 Note that:
 - The filename always takes the form `GENDER_ETHNICITY_AGE{_cropped}.mat`
  - Our most powerful, generic model, is therefore `all_all_all.mat`
-- The number of components retained is always the minimal sufficient to retain 99.7% of the variance in the model's training set
+- The number of components retained is always the minimal sufficient to retain **99.7% of the variance** in the model's training set
 - Among all possible combinations of age, gender and ethnicity, we retain only those ones for which sufficient training data exists in our database to build a useful model
 
 
-| Filename                          | Gender | Ethnicity | Age         | Facial Region | Training Samples | No. Components (99.7% variance)
-|-----------------------------------|--------|-----------|-------------|----------|-------- |-------- |-------- |
+| Filename                          | Gender | Ethnicity | Age         |  Region |  Subjects | Components  | 
+|-----------------------------------|--------|-----------|-------------|---------|----- |---- |
 | `all_all_18-50.mat`               | All    | All       | 18 to 50    | Full    | 5106 | 183 |
 | `all_all_18-50_cropped.mat`       | All    | All       | 18 to 50    | Cropped | 5106 | 280 |
 | `all_all_7-18.mat`                | All    | All       | 7 to 18     | Full    | 2029 | 132 |
@@ -152,12 +152,26 @@ Each `.mat` model file contains the following:
 |`components`| Floating point matrix of shape `(n_vertices * 3, n_components)` | The unit eigenvectors that make up the statistical model. Each component ordered as the mean is.
 |`eigenvalues`| Floating point array of shape `(n_components,)` | The corresponding eigenvalue (variance) for each component
 |`cumulative_explained_variance`| Floating point array of shape `(n_components,)` | The cumulative variance explained by retaining all components up to this one. Final value will always be just above `0.997`.
-|`trilist`| Integer matrix of shape `(n_triangles, 3)` | The `0`-based triangulation of the vertices needed to form the mesh surface.
+|`trilist`| Integer matrix of shape `(n_triangles, 3)` | The `0`-based triangulation of the vertices needed to form the mesh surface. Note that to use in Matlab, you therefore must add 1 to all indices to make it `1`-based.
 |`n_training_samples`| Integer | The number of facial scans used to build the model.
 
-Cropped facial models (those ending in `_croped.mat`) have an additional two fields, describing the mapping between the full and cropped facial models:
+Cropped facial models (those ending in `_croped.mat`) have an additional two fields, describing the mapping between the full and cropped facial models. Both of these mappings are **`0`-based** (and so just like `trilist`, to use in matlab you will need to add 1 to all values to make them `1`-based):
 
 | Key  | Datatype | Interpretation |
 |------|----------|----------------|
-|`map_cropped_to_full`| Integer array of shape `(n_cropped_vertices,)` | `i`'th value encodes the matching vertex index in the full model for the `i`'th vertex of the cropped model
-|`map_full_to_cropped`| Integer array of shape `(n_full_vertices,)` | `j`'th value encodes the matching vertex index in the cropped model for the `j`'th vertex of the full model. Where no mapping exists, `-1` is set.
+|`map_cropped_to_full`| Integer array of shape `(n_cropped_vertices,)` | `i`'th value encodes the matching vertex index  (`0`-based) in the full model for the `i`'th vertex of the cropped model
+|`map_full_to_cropped`| Integer array of shape `(n_full_vertices,)` | `j`'th value encodes the matching vertex index  (`0`-based) in the cropped model for the `j`'th vertex of the full model. Where no mapping exists, `-1` is set.
+
+
+## Loading LSFM models with Menpo
+
+As of `menpo3d ` v0.5.2 an importer for the LSFM file format is included:
+
+```python
+import menpo3d.io as m3io
+
+model = m3io.import_lsfm_model('./path/to/all_all_all.mat')
+print(model)
+```
+
+This returns a Menpo [`PCAModel`](https://menpo.readthedocs.io/en/stable/api/model/PCAModel.html), ready for use.

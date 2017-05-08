@@ -1,7 +1,10 @@
 sudo: false
+language: generic
 
 os:
-- linux
+  - osx
+  - linux
+osx_image: xcode6.4
 
 git:
   depth: 200
