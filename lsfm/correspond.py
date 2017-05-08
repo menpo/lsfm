@@ -44,7 +44,7 @@ def data_weights():
     y_pen = 1.7
     template = load_template()
     return generate_data_weights_per_iter(template,
-                                          template.landmarks['nosetip'].lms,
+                                          template.landmarks['nosetip'],
                                           r_width=r_width,
                                           r_mid=r_mid,
                                           w_min_iter=w_min_iter,
@@ -57,7 +57,7 @@ def correspond_mesh(mesh, mask=None, verbose=False):
     template = load_template().copy()
     if mask is not None:
         template.landmarks['__lsfm_masked'] = template.landmarks[
-            '__lsfm'].lms.from_mask(mask)
+            '__lsfm'].from_mask(mask)
         group = '__lsfm_masked'
         if verbose:
             n_bad_lms = (~mask).sum()
