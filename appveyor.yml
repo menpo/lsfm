@@ -18,6 +18,5 @@ init:
 
 install:
   - ps: $env:MINICONDA_DIR = python C:\\condaci.py miniconda_dir
-  - ps: >
-      & "${env:MINICONDA_DIR}\\python" C:\\condaci.py build conda
-
+  - cmd: "%MINICONDA_DIR%\\python C:\\condaci.py build conda"
+  
