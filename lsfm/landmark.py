@@ -67,7 +67,7 @@ def landmark_mesh(mesh, img_shape=(320, 240), verbose=False):
         'landmarks_2d': img_lms,
         'occlusion_mask': occlusion_mask,
         'landmarks_3d_masked': PointCloud(shape_img.sample(
-            img.landmarks['__lsfm_on_surface'].lms).T)
+            img.landmarks['__lsfm_on_surface']).T)
     }
 
     if (~occlusion_mask).sum() != 0:

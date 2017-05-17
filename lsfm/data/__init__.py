@@ -49,7 +49,7 @@ def path_to_template():
 @lru_cache()
 def load_template():
     template = lio.import_pickle(DATA_DIR / 'template.pkl')
-    template.landmarks['__lsfm'] = template.landmarks['ibug68'].lms.from_mask(
+    template.landmarks['__lsfm'] = template.landmarks['ibug68'].from_mask(
         LANDMARK_MASK)
     return prepare_template_reference_space(template)
 
