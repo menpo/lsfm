@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  lsfm:
+    build: 
+      context: .
+      dockerfile: "Dockerfile"
+    image: "lsfm-ubuntu"
+    volumes:
+      - "/output_dir:/output_dir"
+      - "/input_dir:/input_dir"
+      - "/01_MorphableModel.mat:/01_MorphableModel.mat"
